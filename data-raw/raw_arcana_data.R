@@ -3,7 +3,7 @@
 #' This approach creates a more object-oriented dataset where each card
 #' is represented as both upright and reversed arcana objects.
 #' 
-arcana_data <- list(
+major_arcana_data <- list(
   list(number = 0, name = "The Fool",
        upright = "new beginnings, innocence, spontaneity, free spirit",
        reversed = "holding back, recklessness, risk-taking"),
@@ -96,7 +96,7 @@ arcana_data <- list(
 create_major_arcana_objects <- function() {
   all_cards <- list()
   
-  for (card_data in arcana_data) {
+  for (card_data in major_arcana_data) {
     # Create upright version
     upright_card <- new_arcana(
       name = card_data$name,
@@ -123,5 +123,4 @@ create_major_arcana_objects <- function() {
 
 major_arcana_objects <- create_major_arcana_objects()
 
-usethis::use_data(arcana_data, overwrite = TRUE, internal = TRUE)
-usethis::use_data(major_arcana_objects, overwrite = TRUE)
+usethis::use_data(major_arcana_data, major_arcana_objects, overwrite = TRUE)
