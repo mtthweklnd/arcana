@@ -5,7 +5,7 @@
 \alias{major_arcana_data}
 \title{Major Arcana Tarot Card Data}
 \format{
-A data frame with 22 rows and 4 variables:
+A list with 22 items and 4 items each:
 \describe{
 \item{number}{Card number (0-21)}
 \item{name}{Card name}
@@ -17,7 +17,7 @@ A data frame with 22 rows and 4 variables:
 major_arcana_data
 }
 \description{
-A dataset containing the 22 Major Arcana tarot cards with their
+A list object containing the 22 Major Arcana tarot cards with their
 upright and reversed keyword meanings.
 }
 \keyword{datasets}
