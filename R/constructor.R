@@ -9,13 +9,14 @@
 #'
 #' @return An object of class "arcana"
 #' @export
-new_arcana <- function(name, orientation, keywords, number) {
+new_arcana <- function(name, orientation, keywords, number, emoji) {
   structure(
     list(
       name = name,
       orientation = orientation,
       keywords = keywords,
-      number = number
+      number = number,
+      emoji = emoji
     ),
     class = "arcana"
   )
@@ -34,13 +35,14 @@ new_arcana <- function(name, orientation, keywords, number) {
 print.arcana <- function(x, ...) {
   name <- x$name
   number <- x$number
+  emoji <- x$emoji
   roman <- if (number == 0) {
     0
   } else {
     as.character(utils::as.roman(number))
   }
   orientation <- x$orientation
-  keywords <- keyword_vec <- trimws(strsplit(x$keywords, ",")[[1]])
+  keywords <- trimws(strsplit(x$keywords, ",")[[1]])
 
   color <- if (orientation == "upright") {
     color <- "#0cc9ba"
@@ -60,11 +62,10 @@ print.arcana <- function(x, ...) {
 
   cli::cli_div(id = "box", theme = card_theme)
 
-  cli_text()
-  cli_rule("{.strong {roman} - {name}}")
-  cli_text("── {.splash {toupper(orientation)}}")
-  cli_ul(keywords)
-  cli_end()
+  cli::cli_rule("{.strong {roman} - {name} {emoji}}")
+  cli::cli_text("── {.splash {toupper(orientation)}}")
+  cli::cli_ul(keywords)
+  cli::cli_end()
 
-  invisible(x)
+  # invisible(x)
 }

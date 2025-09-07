@@ -4,7 +4,7 @@
 \alias{new_arcana}
 \title{Create an Arcana Object}
 \usage{
-new_arcana(name, orientation, keywords, number)
+new_arcana(name, orientation, keywords, number, emoji)
 }
 \arguments{
 \item{name}{Character string, name of the tarot card}

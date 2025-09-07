@@ -10,4 +10,4 @@
 #'   \item{upright_keywords}{Keywords for upright orientation}
 #'   \item{reversed_keywords}{Keywords for reversed orientation}
 #' }
-"major_arcana_data"
+"major_arcana_list"
