@@ -1,18 +1,9 @@
-# =============================================================================
-# RECREATE ARCANA DATASET USING new_arcana() FUNCTION
-# =============================================================================
-
-# -----------------------------------------------------------------------------
-# 1. UPDATED DATA CREATION (data-raw/major_arcana.R)
-# -----------------------------------------------------------------------------
-
 #' Create Major Arcana Dataset Using new_arcana() Function
 #'
 #' This approach creates a more object-oriented dataset where each card
 #' is represented as both upright and reversed arcana objects.
-
-# First, define the raw card data
-raw_card_data <- list(
+#' 
+arcana_data <- list(
   list(number = 0, name = "The Fool",
        upright = "new beginnings, innocence, spontaneity, free spirit",
        reversed = "holding back, recklessness, risk-taking"),
@@ -102,15 +93,10 @@ raw_card_data <- list(
        reversed = "personal closure, incomplete, stagnation")
 )
 
-# -----------------------------------------------------------------------------
-# 2. CREATE ARCANA OBJECTS DATASET
-# -----------------------------------------------------------------------------
-
-# Create a comprehensive dataset with all cards in both orientations
 create_major_arcana_objects <- function() {
   all_cards <- list()
   
-  for (card_data in raw_card_data) {
+  for (card_data in arcana_data) {
     # Create upright version
     upright_card <- new_arcana(
       name = card_data$name,
@@ -137,4 +123,5 @@ create_major_arcana_objects <- function() {
 
 major_arcana_objects <- create_major_arcana_objects()
 
-usethis::use_data(major_arcana_objects, major_arcana_lookup, internal = TRUE, overwrite = TRUE)
+usethis::use_data(arcana_data, overwrite = TRUE, internal = TRUE)
+usethis::use_data(major_arcana_objects, overwrite = TRUE)
