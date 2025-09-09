@@ -1,4 +1,4 @@
-test_that("major_arcana objects has the correct structure", {
+test_that(".major_arcana objects has the correct structure", {
   # Test that the object is a list
   expect_type(.major_arcana_objects, "list")
 
@@ -12,7 +12,7 @@ test_that("major_arcana objects has the correct structure", {
   )))
 })
 
-test_that("each card in major_arcana_objects is valid", {
+test_that("each card in .major_arcana_objects is valid", {
   # This test loops through every card to check its properties,
   # addressing your second requirement.
   purrr::walk(.major_arcana_objects, function(card) {

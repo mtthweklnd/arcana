@@ -1,0 +1,34 @@
+---
+title: "Untitled"
+format: html
+---
+
+
+## Installation
+
+You can install the development version of arcana from [GitHub](https://github.com/) with:
+
+```{r}
+
+# install.packages("pak")
+pak::pak("mtthweklnd/arcana")
+
+```
+
+``` {r}
+
+library(arcana)
+
+the_analyst <- arcana::arcana(
+  name = "The Analyst",
+  number = 34L,
+  emoji = emoji::emoji_name[["computer"]],
+  keywords = list(
+    upright = c("motivated", "inspired", "dependable"),
+    reversed = c("isolated", "trauma", "addiction")
+  )
+)
+
+the_analyst
+
+```

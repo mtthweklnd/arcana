@@ -1,0 +1,56 @@
+---
+title: "Arcana Object Examples"
+format: html
+editor: visual
+---
+
+## Introduction
+
+This document provides examples of creating and printing `arcana` objects, which represent cards from the Major Arcana of a tarot deck.
+
+## Setup
+
+First, we need to load the `arcana` package.
+
+```{r}
+# Load the package
+library(devtools)
+devtools::load_all()
+library(arcana)
+```
+
+## Creating a Single Arcana Object
+
+Here we create a single `arcana` object for "The Fool" card.
+
+```{r}
+# Create a new arcana object
+the_fool <- new_arcana(,)
+```
+
+### Printing the Object
+
+When we print the object, we should see a formatted output with the card's number, name, and keywords.
+
+```{r}
+# Print the object
+print(the_fool)
+```
+
+## Creating Multiple Arcana Objects
+
+We can also create a list of `arcana` objects. Here, we'll create the first three cards of the Major Arcana.
+
+```{r}
+# Create a list of arcana objects
+first_three <- lapply(0:2, new_arcana)
+```
+
+### Printing the List
+
+Printing the list will display the information for each card.
+
+```{r}
+# Print the list of objects
+print(first_three)
+```

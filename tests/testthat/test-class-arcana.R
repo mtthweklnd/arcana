@@ -1,10 +1,9 @@
 test_that("arcana object properties have the correct types", {
   card <- arcana(
     name = "The Test",
-    number = 99L, # Using L makes it explicitly an integer
+    number = 99L,
     emoji = "\U0001F525",
-    keywords = list(upright = "a, b", reversed = "c, d"),
-    orientation = "upright"
+    keywords = list(upright = "a, b", reversed = "c, d")
   )
 
   # Test that the object is the correct S7 class
@@ -17,16 +16,15 @@ test_that("arcana object properties have the correct types", {
 })
 
 test_that("arcana validators throw errors for bad input", {
-  # This directly tests your first requirement: ensuring an error occurs.
   expect_error(
     arcana(
       name = "Error Card",
       number = 1L,
       emoji = "e",
       keywords = list(upright = "a", reversed = "b"),
-      orientation = "sideways" # Invalid orientation
+      orientation = "sideways"
     ),
-    "must be either 'upright' or 'reversed'"
+    "unused argument"
   )
 
   # This tests that the keywords list must have the correct names
@@ -35,9 +33,18 @@ test_that("arcana validators throw errors for bad input", {
       name = "Error Card",
       number = 1L,
       emoji = "e",
-      keywords = list(up = "a", down = "b"), # Invalid names
-      orientation = "upright"
+      keywords = list(up = "a", down = "b")
     ),
     "must contain 'upright' and 'reversed' names"
+  )
+
+  expect_error(
+    arcana(
+      name = "Error Card",
+      number = 10,
+      emoji = "e",
+      keywords = list(up = "a", down = "b")
+    ),
+    "@number must be <integer>"
   )
 })
