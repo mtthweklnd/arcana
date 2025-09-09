@@ -2,7 +2,6 @@
 % Please edit documentation in R/arcana-package.R
 \docType{package}
 \name{arcana-package}
-\alias{arcana}
 \alias{arcana-package}
 \title{arcana: What the Package Does (One Line, Title Case)}
 \description{

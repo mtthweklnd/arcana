@@ -5,7 +5,7 @@
 \title{Print Method for Arcana Objects
 A styled print method for arcana objects using the cli package.}
 \usage{
-\method{print}{arcana}(x, ...)
+print.arcana(x, ...)
 }
 \arguments{
 \item{x}{An object of class "arcana"}
